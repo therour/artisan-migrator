@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__.'/vendor/autoload.php';
+
+// Load environment variables.
+(new App\LoadEnvironmentVariables(dirname(__DIR__)))->bootstrap();
+
+// Creating application.
+$app = new App\Application(__DIR__);
+$app->singleton(Illuminate\Contracts\Debug\ExceptionHandler::class, App\Exceptions\Handler::class);
+$app->singleton(Illuminate\Contracts\Console\Kernel::class, App\Console\Kernel::class);
+
+// Setting Configuration.
+$config = $app->make('config');
+require __DIR__.'/config.php';
+
+// Execute artisan command
+$exitCode = $app
+    ->make('Illuminate\Contracts\Console\Kernel')
+    ->handle(
+        new Symfony\Component\Console\Input\ArgvInput,
+        new Symfony\Component\Console\Output\ConsoleOutput
+    );
+
+exit($exitCode);
