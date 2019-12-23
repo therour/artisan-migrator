@@ -1,5 +1,6 @@
 #!/usr/bin/env php
 <?php
+
 require_once __DIR__.'/vendor/autoload.php';
 
 // Load environment variables.
@@ -13,6 +14,9 @@ $app->singleton(Illuminate\Contracts\Console\Kernel::class, App\Console\Kernel::
 // Setting Configuration.
 $config = $app->make('config');
 require __DIR__.'/config.php';
+
+
+// \Illuminate\Support\Facades\Schema::defaultStringLength(191);
 
 // Execute artisan command
 $exitCode = $app

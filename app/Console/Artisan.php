@@ -49,7 +49,7 @@ class Artisan extends SymfonyApplication implements ApplicationContract
      */
     public function __construct(Container $laravel, $version)
     {
-        parent::__construct('Laravel Framework', $version);
+        parent::__construct('Laravel Artisan', $version);
 
         $this->laravel = $laravel;
         $this->setAutoExit(false);
