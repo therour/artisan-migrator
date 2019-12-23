@@ -4,7 +4,7 @@
 require_once __DIR__.'/vendor/autoload.php';
 
 // Load environment variables.
-(new App\LoadEnvironmentVariables(dirname(__DIR__)))->bootstrap();
+(new App\LoadEnvironmentVariables(__DIR__))->bootstrap();
 
 // Creating application.
 $app = new App\Application(__DIR__);
