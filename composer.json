@@ -1,7 +1,7 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "name": "therour/db-migrator",
+    "description": "The Database migration based on laravel migration.",
+    "keywords": ["database", "php", "migration"],
     "license": "MIT",
     "type": "project",
     "require": {
