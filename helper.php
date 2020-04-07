@@ -69,3 +69,16 @@ if (! function_exists('config')) {
         return app('config')->get($key, $default);
     }
 }
+
+if (! function_exists('database_path')) {
+    /**
+     * Get the path to the base of the install.
+     *
+     * @param  string  $path
+     * @return string
+     */
+    function database_path($path = '')
+    {
+        return app()->databasePath($path);
+    }
+}
