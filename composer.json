@@ -26,6 +26,11 @@
         },
         "files": ["helper.php"]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -37,5 +42,9 @@
         "optimize-autoloader": true
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "mockery/mockery": "^1.3",
+        "phpunit/phpunit": "^9.1"
+    }
 }

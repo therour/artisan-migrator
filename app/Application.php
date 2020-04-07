@@ -32,6 +32,13 @@ class Application extends Container
     protected $basePath;
 
     /**
+     * The custom database path defined by the developer.
+     *
+     * @var string
+     */
+    protected $databasePath;
+
+    /**
      * All of the loaded configuration files.
      *
      * @var array
@@ -344,7 +351,20 @@ class Application extends Container
      */
     public function databasePath($path = '')
     {
-        return $this->basePath.DIRECTORY_SEPARATOR.'database'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return ($this->databasePath ?? $this->basePath.DIRECTORY_SEPARATOR.'database').($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+
+    /**
+     * Set the database directory.
+     *
+     * @param  string  $path
+     * @return $this
+     */
+    public function useDatabasePath($path)
+    {
+        $this->databasePath = $path;
+
+        return $this;
     }
 
     /**

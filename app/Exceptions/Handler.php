@@ -22,8 +22,6 @@ class Handler implements ExceptionHandler
         if (method_exists($e, 'report')) {
             return $e->report();
         }
-
-        throw $e; // throw the original exception
     }
 
     /**
